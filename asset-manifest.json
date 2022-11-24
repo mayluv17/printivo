@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/printivo/static/css/main.c0b9825e.css",
+    "main.js": "/printivo/static/js/main.d71d7ae8.js",
+    "static/js/787.159331fa.chunk.js": "/printivo/static/js/787.159331fa.chunk.js",
+    "index.html": "/printivo/index.html",
+    "main.c0b9825e.css.map": "/printivo/static/css/main.c0b9825e.css.map",
+    "main.d71d7ae8.js.map": "/printivo/static/js/main.d71d7ae8.js.map",
+    "787.159331fa.chunk.js.map": "/printivo/static/js/787.159331fa.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0b9825e.css",
+    "static/js/main.d71d7ae8.js"
+  ]
+}

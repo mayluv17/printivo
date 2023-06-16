@@ -1,9 +1,11 @@
 import React from "react";
 import { Context } from "../components/context";
 import CartItem from "../components/CartItem";
+import { Navigate } from "react-router-dom";
 
 function Cart() {
   const [buttonText, SetButtonText] = React.useState("Place Order");
+  const [ordered, setOrdered] = React.useState(false);
   const { cartItems, emptyCart } = React.useContext(Context);
 
   const totalCost = 5.99 * cartItems.length;
@@ -25,10 +27,12 @@ function Cart() {
     setTimeout(() => {
       SetButtonText("Place Order");
       emptyCart();
+      setOrdered(true);
     }, 3000);
   }
   return (
     <main className="cart-page">
+      {ordered && <Navigate to="/photos" replace={true} />}
       <h1>Check out</h1>
       {cartItemElements}
       <p className="total-cost">Total: {totalCostDisplay}</p>

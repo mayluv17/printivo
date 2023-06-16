@@ -13,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/Cart" element={<Cart />} />
         <Route exact path="/" element={<Photos />} />
+        <Route path="*" element={<Photos />} />
       </Routes>
     </div>
   );

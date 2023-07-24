@@ -10,7 +10,7 @@ function Image({ className, img }) {
   const heartIcon = hovered && (
     <i
       onClick={() => toggleIsfavorite(img.id)}
-      className={`ri-heart-${img.isFavorite ? "fill" : "line"} favorite`}
+      className={`ri-heart-${img.isFavorite ? "fill" : "line"} favorite px-6`}
     ></i>
   );
   function cartIcon() {
@@ -21,7 +21,7 @@ function Image({ className, img }) {
       return (
         <i
           onClick={() => removeCartItem(img.id)}
-          className="ri-shopping-cart-fill cart"
+          className="ri-shopping-cart-fill cart px-6"
         ></i>
       );
     } else if (hovered && !inCart) {
@@ -29,18 +29,26 @@ function Image({ className, img }) {
         <i
           pid={img.id}
           onClick={() => addToCart(img)}
-          className="ri-add-circle-line cart"
+          className="ri-add-circle-line cart px-6"
         ></i>
       );
     }
   }
 
   return (
-    <div className={`${className} image-container`} ref={ref}>
-      {heartIcon}
-      {cartIcon()}
+    // <div className={`columns-4 image-container`} ref={ref}>
+    <div className={`mt-8 relative w-full img-card`} ref={ref}>
+      <div className="rounded-b-xl card-icons transition ease-in-out absolute bottom-0 flex justify-between w-full h-2 py-6">
+        {heartIcon}
+        {cartIcon()}
+      </div>
       {/* {inCartIcon} */}
-      <img src={img.url} alt={`printivo${img.id}`} className="image-grid" />
+      {/* <img src={img.url} alt={`printivo${img.id}`} className="image-grid" /> */}
+      <img
+        src={img.url}
+        alt={`printivo${img.id}`}
+        className={`${className} rounded-lg`}
+      />
     </div>
   );
 }
